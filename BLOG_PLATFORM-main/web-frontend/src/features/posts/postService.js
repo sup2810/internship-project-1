@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = 'http://localhost:5001/api/posts/';
+const API_URL = 'https://internship-project-backend-1217.onrender.com/api/posts/';
 
 // Create new post
 const createPost = async (postData, token) => {
