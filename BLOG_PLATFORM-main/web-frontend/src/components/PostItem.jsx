@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { FaUserCircle } from 'react-icons/fa';
-
+const API_URL = import.meta.env.VITE_API_URL;
 const PostItem = ({ post }) => {
   const variants = {
     hidden: { opacity: 0, y: 20 },
@@ -9,9 +9,9 @@ const PostItem = ({ post }) => {
   };
 
   // Use a default image if the post doesn't have one
-  const imageUrl = post.imageUrl 
-    ? `http://localhost:5001${post.imageUrl}` 
-    : 'https://via.placeholder.com/400x200?text=No+Image';
+  const imageUrl = post.imageUrl
+  ? `${API_URL}${post.imageUrl}`
+  : 'https://via.placeholder.com/400x200?text=No+Image';
 
   return (
     <motion.div variants={variants} initial='hidden' animate='visible'>

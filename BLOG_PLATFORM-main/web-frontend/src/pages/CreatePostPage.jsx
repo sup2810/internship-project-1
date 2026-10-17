@@ -8,7 +8,7 @@ import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 import Spinner from '../components/Spinner';
 // No separate CSS import needed - styles are in main.scss
-
+const API_URL = import.meta.env.VITE_API_URL;
 const CreatePostPage = () => {
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
@@ -60,7 +60,7 @@ const CreatePostPage = () => {
       const config = {
         headers: { 'Content-Type': 'multipart/form-data' },
       };
-      const { data } = await axios.post('http://localhost:5001/api/upload', formData, config);
+      const { data } = await axios.post(`${API_URL}/api/upload`, formData,config);
       setUploading(false);
       return data.image; // Corrected: Return only the image path string
     } catch (error) {

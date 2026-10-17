@@ -7,7 +7,7 @@ import Meta from '../components/Meta';
 import { toast } from 'react-toastify';
 import { FaUserCircle, FaEdit, FaTrash } from 'react-icons/fa';
 import { motion } from 'framer-motion';
-
+const API_URL = import.meta.env.VITE_API_URL;
 const PostPage = () => {
   const [text, setText] = useState(''); // State for the comment form
 
@@ -64,11 +64,11 @@ const PostPage = () => {
       <Meta title={post.title} description={post.content.substring(0, 150)} />
 
       {post.imageUrl && (
-        <img
-          src={`http://localhost:5001${post.imageUrl}`}
-          alt={post.title}
-          className='post-hero-image'
-        />
+       <img
+  src={`${API_URL}${post.imageUrl}`}
+  alt={post.title}
+  className='post-hero-image'
+/>
       )}
 
       <h1>{post.title}</h1>
