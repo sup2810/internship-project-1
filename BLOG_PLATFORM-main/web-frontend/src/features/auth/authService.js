@@ -2,8 +2,7 @@
 import axios from 'axios';
 
 // Deployed backend API URL
-const API_URL =
-  'https://internship-project-backend-1217.onrender.com/api/auth/';
+const API_URL ='https://internship-project-backend-1217.onrender.com/api/auth/';
 
 // Register user
 const register = async (userData) => {
