@@ -1,5 +1,6 @@
 require('dotenv').config();
 console.log('Mongo URI loaded:', !!process.env.MONGO_URI);
+console.log('JWT_SECRET loaded:', !!process.env.JWT_SECRET);
 const path = require('path');
 const express = require('express');
 const cors = require('cors');
